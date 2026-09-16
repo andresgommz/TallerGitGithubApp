@@ -52,7 +52,9 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun TarjetaPresentacion() {
-    Card {
+    Card (
+        modifier = Modifier.background(color = Color.White)
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -169,6 +171,33 @@ fun TarjetaPresentacion() {
                 ),
                 thickness = 1.dp
             )
+
+            Column(
+                modifier = Modifier.fillMaxWidth()
+                    .padding(horizontal = 24.dp)
+            ) {
+                Text(
+                    text = "SOBRE MI MATERIA FAVORITA",
+                    fontSize = 18.sp,
+                    color = Color(0xFF9AACB4),
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(
+                        bottom = 8.dp
+                    )
+                        .align(Alignment.CenterHorizontally)
+                )
+
+                Text(
+                    text = "Hoy en día casi todos tenemos un celular, a través de este nos comunicamos, usamos apps a diario, etc. Tecnologías móviles me permite a mi ser el que desarrolle las apps que las personas usen, por eso me apasiona.",
+                    fontSize = 18.sp,
+                    lineHeight = 24.sp,
+                    color = Color(0xFF5F7783),
+                    modifier = Modifier.padding(
+                        bottom = 8.dp
+                    )
+                        .align(Alignment.Start)
+                )
+            }
 
             Column(
                 verticalArrangement = Arrangement.Bottom,
